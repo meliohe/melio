@@ -246,106 +246,106 @@
 
 			});
 
-		// Menu.
-			var $menu = $('#menu'),
-				$menuInner;
+		// discord.
+		var $discord = $('#discord'),
+		$discordInner;
 
-			$menu.wrapInner('<div class="inner"></div>');
-			$menuInner = $menu.children('.inner');
-			$menu._locked = false;
+	$discord.wrapInner('<div class="inner"></div>');
+	$discordInner = $discord.children('.inner');
+	$discord._locked = false;
 
-			$menu._lock = function() {
+	$discord._lock = function() {
 
-				if ($menu._locked)
-					return false;
+		if ($discord._locked)
+			return false;
 
-				$menu._locked = true;
+		$discord._locked = true;
 
+		window.setTimeout(function() {
+			$discord._locked = false;
+		}, 350);
+
+		return true;
+
+	};
+
+	$discord._show = function() {
+
+		if ($discord._lock())
+			$body.addClass('is-discord-visible');
+
+	};
+
+	$discord._hide = function() {
+
+		if ($discord._lock())
+			$body.removeClass('is-discord-visible');
+
+	};
+
+	$discord._toggle = function() {
+
+		if ($discord._lock())
+			$body.toggleClass('is-discord-visible');
+
+	};
+
+	$discordInner
+		.on('click', function(event) {
+			event.stopPropagation();
+		})
+		.on('click', 'a', function(event) {
+
+			var href = $(this).attr('href');
+
+			event.preventDefault();
+			event.stopPropagation();
+
+			// Hide.
+				$discord._hide();
+
+			// Redirect.
 				window.setTimeout(function() {
-					$menu._locked = false;
-				}, 350);
+					window.location.href = href;
+				}, 250);
 
-				return true;
+		});
 
-			};
+	$discord
+		.appendTo($body)
+		.on('click', function(event) {
 
-			$menu._show = function() {
+			event.stopPropagation();
+			event.preventDefault();
 
-				if ($menu._lock())
-					$body.addClass('is-menu-visible');
+			$body.removeClass('is-discord-visible');
 
-			};
+		})
+		.append('<a class="close" href="#discord">Close</a>');
 
-			$menu._hide = function() {
+	$body
+		.on('click', 'a[href="#discord"]', function(event) {
 
-				if ($menu._lock())
-					$body.removeClass('is-menu-visible');
+			event.stopPropagation();
+			event.preventDefault();
 
-			};
+			// Toggle.
+				$discord._toggle();
 
-			$menu._toggle = function() {
+		})
+		.on('click', function(event) {
 
-				if ($menu._lock())
-					$body.toggleClass('is-menu-visible');
+			// Hide.
+				$discord._hide();
 
-			};
+		})
+		.on('keydown', function(event) {
 
-			$menuInner
-				.on('click', function(event) {
-					event.stopPropagation();
-				})
-				.on('click', 'a', function(event) {
+			// Hide on escape.
+				if (event.keyCode == 27)
+					$discord._hide();
 
-					var href = $(this).attr('href');
-
-					event.preventDefault();
-					event.stopPropagation();
-
-					// Hide.
-						$menu._hide();
-
-					// Redirect.
-						window.setTimeout(function() {
-							window.location.href = href;
-						}, 250);
-
-				});
-
-			$menu
-				.appendTo($body)
-				.on('click', function(event) {
-
-					event.stopPropagation();
-					event.preventDefault();
-
-					$body.removeClass('is-menu-visible');
-
-				})
-				.append('<a class="close" href="#menu">Close</a>');
-
-			$body
-				.on('click', 'a[href="#menu"]', function(event) {
-
-					event.stopPropagation();
-					event.preventDefault();
-
-					// Toggle.
-						$menu._toggle();
-
-				})
-				.on('click', function(event) {
-
-					// Hide.
-						$menu._hide();
-
-				})
-				.on('keydown', function(event) {
-
-					// Hide on escape.
-						if (event.keyCode == 27)
-							$menu._hide();
-
-				});
+		});
 
 	});
 

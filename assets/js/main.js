@@ -246,6 +246,208 @@
 
 			});
 
+		// emailinquiry.
+		var $emailinquiry = $('#emailinquiry'),
+		$emailinquiryInner;
+
+	$emailinquiry.wrapInner('<div class="inner"></div>');
+	$emailinquiryInner = $emailinquiry.children('.inner');
+	$emailinquiry._locked = false;
+
+	$emailinquiry._lock = function() {
+
+		if ($emailinquiry._locked)
+			return false;
+
+		$emailinquiry._locked = true;
+
+		window.setTimeout(function() {
+			$emailinquiry._locked = false;
+		}, 350);
+
+		return true;
+
+	};
+
+	$emailinquiry._show = function() {
+
+		if ($emailinquiry._lock())
+			$body.addClass('is-emailinquiry-visible');
+
+	};
+
+	$emailinquiry._hide = function() {
+
+		if ($emailinquiry._lock())
+			$body.removeClass('is-emailinquiry-visible');
+
+	};
+
+	$emailinquiry._toggle = function() {
+
+		if ($emailinquiry._lock())
+			$body.toggleClass('is-emailinquiry-visible');
+
+	};
+
+	$emailinquiryInner
+		.on('click', function(event) {
+			event.stopPropagation();
+		})
+		.on('click', 'a', function(event) {
+
+			var href = $(this).attr('href');
+
+			event.preventDefault();
+			event.stopPropagation();
+
+			// Hide.
+				$emailinquiry._hide();
+
+			// Redirect.
+				window.setTimeout(function() {
+					window.location.href = href;
+				}, 250);
+
+		});
+
+	$emailinquiry
+		.appendTo($body)
+		.on('click', function(event) {
+
+			event.stopPropagation();
+			event.preventDefault();
+
+			$body.removeClass('is-emailinquiry-visible');
+
+		})
+		.append('<a class="close" href="#emailinquiry">Close</a>');
+
+	$body
+		.on('click', 'a[href="#emailinquiry"]', function(event) {
+
+			event.stopPropagation();
+			event.preventDefault();
+
+			// Toggle.
+				$emailinquiry._toggle();
+
+		})
+		.on('click', function(event) {
+
+			// Hide.
+				$emailinquiry._hide();
+
+		})
+		.on('keydown', function(event) {
+
+			// Hide on escape.
+				if (event.keyCode == 27)
+					$emailinquiry._hide();
+
+		});
+
+		// facebookstuff.
+		var $facebookstuff = $('#facebookstuff'),
+		$facebookstuffInner;
+
+	$facebookstuff.wrapInner('<div class="inner"></div>');
+	$facebookstuffInner = $facebookstuff.children('.inner');
+	$facebookstuff._locked = false;
+
+	$facebookstuff._lock = function() {
+
+		if ($facebookstuff._locked)
+			return false;
+
+		$facebookstuff._locked = true;
+
+		window.setTimeout(function() {
+			$facebookstuff._locked = false;
+		}, 350);
+
+		return true;
+
+	};
+
+	$facebookstuff._show = function() {
+
+		if ($facebookstuff._lock())
+			$body.addClass('is-facebookstuff-visible');
+
+	};
+
+	$facebookstuff._hide = function() {
+
+		if ($facebookstuff._lock())
+			$body.removeClass('is-facebookstuff-visible');
+
+	};
+
+	$facebookstuff._toggle = function() {
+
+		if ($facebookstuff._lock())
+			$body.toggleClass('is-facebookstuff-visible');
+
+	};
+
+	$facebookstuffInner
+		.on('click', function(event) {
+			event.stopPropagation();
+		})
+		.on('click', 'a', function(event) {
+
+			var href = $(this).attr('href');
+
+			event.preventDefault();
+			event.stopPropagation();
+
+			// Hide.
+				$facebookstuff._hide();
+
+			// Redirect.
+				window.setTimeout(function() {
+					window.location.href = href;
+				}, 250);
+
+		});
+
+	$facebookstuff
+		.appendTo($body)
+		.on('click', function(event) {
+
+			event.stopPropagation();
+			event.preventDefault();
+
+			$body.removeClass('is-facebookstuff-visible');
+
+		})
+		.append('<a class="close" href="#facebookstuff">Close</a>');
+
+	$body
+		.on('click', 'a[href="#facebookstuff"]', function(event) {
+
+			event.stopPropagation();
+			event.preventDefault();
+
+			// Toggle.
+				$facebookstuff._toggle();
+
+		})
+		.on('click', function(event) {
+
+			// Hide.
+				$facebookstuff._hide();
+
+		})
+		.on('keydown', function(event) {
+
+			// Hide on escape.
+				if (event.keyCode == 27)
+					$facebookstuff._hide();
+
+		});
+
 		// discord.
 		var $discord = $('#discord'),
 		$discordInner;

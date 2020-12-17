@@ -48,103 +48,283 @@
 						<!-- One -->
 							<section id="one">
 								<div class="inner">
-									<header class="major">
-										<h1>zy’s notes on music theory</h1>
-									</header>
-									
-									
-									1.1.1. The circle of fifths
-											 
-											1.1.2. Scale degrees and their qualities
-											 
-											1.1.3. Chromatic intervals
-											 
-											1.1.4. Inversions
-											 
-											1.1.5. Pitch class
-										1.2. Decoration
-											1.2.1. Ornamentation
-											1.2.2. Non-chord/non-harmonic notes
-									2. Rhythm
-										2.1. Time signatures
-											2.1.1. Time signature times
-											2.1.2. Main beats and pulses
-											2.1.3. Hybrid times
-									3. Harmony
-										3.1. Fundamental harmony
-											3.1.1. The roman numeral system
-											3.1.2. Inversions
-											3.1.3. Cadences
-											3.1.4. General principles
-											3.1.5. Circle progressions
-											3.1.6. Cadential & passing 6/4
-											3.1.7. Chord motion types
-											3.1.8. Definition of voicing and voice leading
-											3.1.9. Harmonization
-										3.2. Modulation
-											3.2.1. Key modulation
-											3.2.2. Modal mixture
-										3.3. Advanced harmony
-											3.3.1. Linear harmony
-											3.3.2. Dissonances and consonances
-											3.3.3. Added notes
-										3.4. Other forms of harmony
-											3.4.1. Harmony by 4ths and 5ths
-											3.4.2. Harmony by 2nds and 7ths
-											3.4.3. Mirror harmony
-											3.4.4. Negative harmony
-											3.4.5. Combining different types of harmony
-									4. Melody
-										4.1. Melody essentials
-											4.1.1. Terms
-											4.1.2. Guidelines
-										4.2. Defining a melody's sound
-											4.2.1. Achieving originality
-											4.2.2. Achieving emotional impact
-									5. Counterpoint
-										5.1. General counterpoint
-											5.1.1. Guidelines
-										5.2. Counterpoint species
-											5.2.1. First species
-											5.2.2. Second species
-											5.2.3. Third species
-											5.2.4. Fourth species
-											5.2.5. Fifth species
-									6. Orchestration
-										6.1. Instruments and their transposition
-											6.1.1. Concert pitch (C) instruments
-											6.1.2. ↓ +2nd (Bb) instruments
-											6.1.3. ↓ -3rd (A) instruments
-											6.1.4. ↑ P4th (G) instruments
-											6.1.5. ↑ P5th (F) instruments
-										6.2. Orchestrating
-											6.2.1. The main concepts & guidelines of orchestration
-											6.2.2. Notes on orchestral scores
-											6.2.3. Preparations before composing
-									7. Lists
-										7.1. Chords
-											7.1.1. Major chords
-											7.1.2. Minor chords
-											7.1.3. Dominant chords
-											7.1.4. Augmented chords
-											7.1.5. Diminished chords
-											7.1.6. Other/special chords
-										7.2. Scales
-											7.2.1. Standard major/minor scales
-											7.2.2. Standard modes
-											7.2.3. 5 tone scales
-											7.2.4. 6 tone scales
-											7.2.5. Miscellaneous scales
-											7.2.6. Special/complex scales
-										7.3. Terms
-											7.3.1. Voices
-											7.3.2. Tempo
-											7.3.3. Dynamics
-											7.3.4. Patterns
-											7.3.5. Directions
-											7.3.6. Moods
-											7.3.7. Techniques
-											7.3.8. Texture
+									<h1 id="commands">Commands</h1>
+<h3 id="table-of-contents">Table of contents</h3>
+<ul>
+<li><a href="#addpp">!addpp</a></li>
+<li><a href="#ar">!ar</a></li>
+<li><a href="#bmi">!bmi</a></li>
+<li><a href="#bpm">!bpm</a></li>
+<li><a href="#bttv">!bttv</a></li>
+<li><a href="#compare">!compare</a></li>
+<li><a href="#emojipedia">!emojipedia</a></li>
+<li><a href="#emote">!emote</a></li>
+<li><a href="#eval">!eval</a></li>
+<li><a href="#fantasychange">!fantasychange</a></li>
+<li><a href="#fantasyname">!fantasyname</a></li>
+<li><a href="#ffz">!ffz</a></li>
+<li><a href="#flowa">!flowa</a></li>
+<li><a href="#flowabot">!flowabot</a></li>
+<li><a href="#help">!help</a></li>
+<li><a href="#ign-set">!ign-set</a></li>
+<li><a href="#lastfm">!lastfm</a></li>
+<li><a href="#np">!np</a></li>
+<li><a href="#osu-track">!osu-track</a></li>
+<li><a href="#osu-untrack">!osu-untrack</a></li>
+<li><a href="#osu">!osu</a></li>
+<li><a href="#ping">!ping</a></li>
+<li><a href="#pp">!pp</a></li>
+<li><a href="#recent">!recent</a></li>
+<li><a href="#render">!render</a></li>
+<li><a href="#score">!score</a></li>
+<li><a href="#strains">!strains</a></li>
+<li><a href="#time">!time</a></li>
+<li><a href="#top">!top</a></li>
+<li><a href="#uptime">!uptime</a></li>
+<li><a href="#viewers">!viewers</a></li>
+<li><a href="#with">!with</a></li>
+</ul>
+<hr>
+<h2 id="-addpp">!addpp</h2>
+<p>Calculate new total pp after achieving a certain top play.</p>
+<p><strong>Usage</strong>: <code>!addpp &lt;amounts separated by +&gt; [username] [beatmap_id]</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code>!<span class="hljs-keyword">addpp </span><span class="hljs-number">300</span>
+</code></pre><p>Returns your total pp with an additional 300pp score.</p>
+<pre><code>!addpp <span class="hljs-number">300</span>+<span class="hljs-number">350</span>
+</code></pre><p>Returns your total pp with an additional 300 and 350pp score.</p>
+<pre><code>!addpp <span class="hljs-number">1100</span> Vaxei <span class="hljs-number">1860433</span>
+</code></pre><p>Returns Vaxei&#39;s total pp if their score on /b/1860433 awarded 1100pp.</p>
+<h2 id="-ar">!ar</h2>
+<p>Calculate Approach Rate values and miliseconds with mods applied.</p>
+<p><strong>Usage</strong>: <code>!ar &lt;ar&gt; [+mods]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!ar 8 +DT</span>
+</code></pre><p>Returns AR of AR8 with DT applied.</p>
+<h2 id="-bmi">!bmi</h2>
+<p>Calculate your BMI.</p>
+<p><strong>Usage</strong>: <code>!bmi &lt;height in m or cm&gt; &lt;weight in kg&gt;</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code>!bmi <span class="hljs-number">185</span>cm <span class="hljs-number">70</span>kg
+</code></pre><pre><code>!bmi <span class="hljs-number">1.56</span>m <span class="hljs-number">56</span>kg
+</code></pre><h2 id="-bpm">!bpm</h2>
+<p>Show a visual BPM graph over time for a beatmap.</p>
+<p><strong>Usage</strong>: <code>!bpm [beatmap url] [+mods]</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code><span class="hljs-addition">!bpm</span>
+</code></pre><p>Returns BPM graph for the last beatmap.</p>
+<pre><code>!<span class="hljs-keyword">bpm </span>https://osu.ppy.sh/<span class="hljs-keyword">b/75 </span>+DT
+</code></pre><p>Returns BPM graph with DT for specific beatmap.</p>
+<h2 id="-bttv">!bttv</h2>
+<p>Show a BTTV emote by name. Emotes from <a href="https://betterttv.com/">https://betterttv.com/</a>.</p>
+<p><strong>Usage</strong>: <code>!bttv &lt;emote name&gt;</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code>!<span class="hljs-keyword">bttv </span>WoweeHOP
+</code></pre><p>Returns WoweeHOP BTTV emote</p>
+<h2 id="-compare">!compare</h2>
+<p>Search for best score on the last beatmap.</p>
+<p><strong>Variations</strong>: <code>!compare</code>, <code>!c</code></p>
+<p><strong>Usage</strong>: <code>!compare [username or * for all users] [+mods]</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code>!<span class="hljs-built_in">compare</span>
+</code></pre><p>Returns your own best score on the last beatmap.</p>
+<pre><code>!<span class="hljs-built_in">compare</span> Vaxei +mods
+</code></pre><p>Returns Vaxei&#39;s best score with the same mods on the last beatmap.</p>
+<pre><code>!<span class="hljs-built_in">compare</span> * +HD
+</code></pre><p>Returns the #1 HD score on the last beatmap.</p>
+<h2 id="-emojipedia">!emojipedia</h2>
+<p>Look up what an emoji looks like on all platforms (warning: spammy).</p>
+<p><strong>Usage</strong>: <code>!emojipedia &lt;emoji&gt;</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!emojipedia 🤔</span>
+</code></pre><p>Returns thinking emoji on all platforms.</p>
+<h2 id="-emote">!emote</h2>
+<p>Print one or multiple emotes the bot can use in chat.</p>
+<p><strong>Variations</strong>: <code>!emote</code>, <code>!e</code></p>
+<p><strong>Usage</strong>: <code>!emote &lt;emote 1&gt; [emote 2] [emote n]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!e SourPls</span>
+</code></pre><p>Returns SourPls emote.</p>
+<h2 id="-eval">!eval</h2>
+<p>Runs JavaScript code and returns the result of the last evaluation. Underscore.js for array/object helpers and <code>bonusPP(n)</code> for bonus pp calculation are available.</p>
+<p><strong>Usage</strong>: <code>!eval [javascript code]</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code>!eval <span class="hljs-number">5</span>+<span class="hljs-number">5</span>
+</code></pre><p>Evaluates 5+5 and returns the result.</p>
+<pre><code>!eval _max.([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+</code></pre><p>Uses Underscore.js to return the maximum value of an array.</p>
+<h2 id="-fantasychange">!fantasychange</h2>
+<p>Generates a fantasy name and changes your nickname to it.
+Available types: <code>human</code>, <code>elf</code>, <code>dwarf</code>, <code>hobbit</code>, <code>barbarian</code>, <code>orc</code>, <code>evil</code>, <code>asian</code>, <code>arabic</code>, <code>surname</code>, <code>sci-fi</code>, <code>lovecraft</code>, <code>reptilian</code>, <code>aztec</code>, <code>ratman</code>, <code>demon</code>, <code>dragon</code>, <code>wizard</code>, <code>mixed</code>, <code>english</code>, <code>place</code>, <code>title</code>, <code>military</code>, <code>hero/villain</code>, <code>rockband</code>
+Available lengths: <code>short</code>, <code>medium</code>, <code>long</code>
+Data from <a href="https://www.fantasynamegen.com/">https://www.fantasynamegen.com/</a>.</p>
+<p><strong>Usage</strong>: <code>!fantasychange &lt;type&gt; [length]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!fantasychange elf medium</span>
+</code></pre><p>Generates a medium-length elf name and sets it as your nickname.</p>
+<h2 id="-fantasyname">!fantasyname</h2>
+<p>Generates a fantasy name.
+Available types: <code>human</code>, <code>elf</code>, <code>dwarf</code>, <code>hobbit</code>, <code>barbarian</code>, <code>orc</code>, <code>evil</code>, <code>asian</code>, <code>arabic</code>, <code>surname</code>, <code>sci-fi</code>, <code>lovecraft</code>, <code>reptilian</code>, <code>aztec</code>, <code>ratman</code>, <code>demon</code>, <code>dragon</code>, <code>wizard</code>, <code>mixed</code>, <code>english</code>, <code>place</code>, <code>title</code>, <code>military</code>, <code>hero/villain</code>, <code>rockband</code>
+Available lengths: <code>short</code>, <code>medium</code>, <code>long</code>
+Data from <a href="https://www.fantasynamegen.com/">https://www.fantasynamegen.com/</a>.</p>
+<p><strong>Usage</strong>: <code>!fantasyname &lt;type&gt; [length]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!fantasyname elf medium</span>
+</code></pre><p>Returns a medium-length elf name.</p>
+<h2 id="-ffz">!ffz</h2>
+<p>Show an FFZ emote by name. Emotes from <a href="https://frankerfacez.com/">https://frankerfacez.com/</a>.</p>
+<p><strong>Usage</strong>: <code>!ffz &lt;emote name&gt;</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!ffz WoweeW</span>
+</code></pre><p>Returns WoweeW FFZ emote</p>
+<h2 id="-flowa">!flowa</h2>
+<p>Show a random flower picture. Images from <a href="https://pexels.com/">https://pexels.com/</a>.</p>
+<p><strong>Usage</strong>: <code>!flowa [optional tags separated by space]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!flowa sakura tree</span>
+</code></pre><p>Returns a random picture of a sakura tree.</p>
+<h2 id="-flowabot">!flowabot</h2>
+<p>Show information about this bot.</p>
+<p><strong>Usage</strong>: <code>!flowabot</code></p>
+<h2 id="-help">!help</h2>
+<p>Get help for a command.</p>
+<p><strong>List of all commands:</strong> <a href="https://github.com/LeaPhant/flowabot/blob/master/COMMANDS.md">https://github.com/LeaPhant/flowabot/blob/master/COMMANDS.md</a></p>
+<p><strong>Usage</strong>: <code>!help &lt;command&gt;</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code>!<span class="hljs-built_in">help</span> pp
+</code></pre><p>Returns help on how to use the <code>!pp</code> command.</p>
+<h2 id="-ign-set">!ign-set</h2>
+<p>Sets your osu! username so you can use osu! commands without specifying a username.</p>
+<p><strong>Usage</strong>: <code>!ign-set &lt;osu! username&gt;</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code>!ign-<span class="hljs-keyword">set</span> nathan <span class="hljs-keyword">on</span> osu
+</code></pre><p>Sets your osu! username to nathan on osu.</p>
+<h2 id="-lastfm">!lastfm</h2>
+<p>Show Last.fm stats for a user.</p>
+<p><strong>Usage</strong>: <code>!lastfm &lt;last.fm username&gt; [period (7day, 1month, 3month, 6month, 12month, overall)]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!lastfm rj overall</span>
+</code></pre><p>Returns total last.fm stats for rj.</p>
+<h2 id="-np">!np</h2>
+<p>Shows what song you are currently listening to. If it can&#39;t be retrieved from Rich Presence it will ask for a Last.fm username.</p>
+<p><strong>Usage</strong>: <code>!np [last.fm username]</code></p>
+<h2 id="-osu-track">!osu-track</h2>
+<p>Start tracking the specified user&#39;s osu! top plays in the current channel.</p>
+<p><strong>Usage</strong>: <code>!osu-track &lt;username&gt; [top play limit (1-100, default 50)]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!osu-track nathan_on_osu 50</span>
+</code></pre><p>Start tracking nathan on osu&#39;s top 50 top plays.</p>
+<h2 id="-osu-untrack">!osu-untrack</h2>
+<p>Stop tracking the specified user&#39;s osu! top plays in the current channel.</p>
+<p><strong>Usage</strong>: <code>!osu-untrack &lt;username&gt; [top play limit (1-100, default 50)]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!osu-untrack nathan_on_osu</span>
+</code></pre><p>Stop tracking nathan on osu&#39;s top plays.</p>
+<h2 id="-osu">!osu</h2>
+<p>Show osu! stats.</p>
+<p><strong>Usage</strong>: <code>!osu [username]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!osu nathan_on_osu</span>
+</code></pre><p>Returns nathan on osu&#39;s osu! stats.</p>
+<h2 id="-ping">!ping</h2>
+<p><strong>Usage</strong>: <code>!ping</code></p>
+<h2 id="-pp">!pp</h2>
+<p>Uses osu-tools to calculate pp for a beatmap.</p>
+<p><strong>Usage</strong>: <code>!pp &lt;map link&gt; [+HDDT] [99.23%] [2x100] [1x50] [3m] [342x] [OD9.5] [AR10.3] [CS6]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code>!pp https:<span class="hljs-regexp">//</span>osu.ppy.sh<span class="hljs-regexp">/b/</span><span class="hljs-number">75</span> +HD <span class="hljs-number">4</span>x100 <span class="hljs-number">343</span>x CS2
+</code></pre><p>Calculates pp on this beatmap with HD applied, 4 100s, 343 Combo and CS set to 2.</p>
+<h2 id="-recent">!recent</h2>
+<p>Show recent score or pass.</p>
+<p><strong>Variations</strong>: <code>!recent</code>, <code>!rs</code>, <code>!recentpass</code>, <code>!rp</code></p>
+<p><strong>Usage</strong>: <code>!recent [username]</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code><span class="hljs-addition">!recent nathan_on_osu</span>
+</code></pre><p>Returns nathan on osu&#39;s most recent score.</p>
+<pre><code><span class="hljs-addition">!recent3 respektive</span>
+</code></pre><p>Returns respektive&#39;s most recent score.</p>
+<pre><code><span class="hljs-addition">!recentpass</span>
+</code></pre><p>Returns your most recent pass.</p>
+<h2 id="-render">!render</h2>
+<p>Render picture or gif of a beatmap at a specific time. Videos 10 seconds or longer are automatically rendered as mp4 video with audio and beatmap background.</p>
+<p><strong>Variations</strong>: <code>!render</code>, <code>!frame</code>, <code>!fail</code></p>
+<p><strong>Usage</strong>: <code>!render [beatmap url] [+mods] [AR8] [CS6] [preview/strains/aim/speed/fail] [mp4] [plain] [120fps] [mm:ss] [353x] [4s]</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code><span class="hljs-addition">!render strains</span>
+</code></pre><p>Returns a gif of the hardest part on the last beatmap.</p>
+<pre><code>!<span class="hljs-built_in">fail</span>
+</code></pre><p>Returns a gif of the part where the player failed on the last beatmap.</p>
+<pre><code>!<span class="hljs-selector-tag">render</span> 1<span class="hljs-selector-pseudo">:05</span>
+</code></pre><p>Returns an image of the last beatmap at 1 minute and 5 seconds.</p>
+<pre><code><span class="hljs-addition">!render speed 10s</span>
+</code></pre><p>Returns a 10 second video of the streamiest part on the last beatmap.</p>
+<pre><code>!render <span class="hljs-number">120</span>fps <span class="hljs-number">353</span>x plain
+</code></pre><p>Returns a 120fps video at 353 combo on the last beatmap without sound and black background.</p>
+<h2 id="-score">!score</h2>
+<p>Search for a score on a beatmap.</p>
+<p><strong>Usage</strong>: <code>!score &lt;beatmap url&gt; [username or * for any user] [+mods]</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code>!score https:<span class="hljs-regexp">//</span>osu.ppy.sh<span class="hljs-regexp">/b/</span><span class="hljs-number">75</span> * +HD
+</code></pre><p>Returns #1 score with HD on this beatmap.</p>
+<pre><code>!score https:<span class="hljs-regexp">//</span>osu.ppy.sh<span class="hljs-regexp">/b/</span><span class="hljs-number">75</span>
+</code></pre><p>Returns your best score on this beatmap.</p>
+<pre><code>!score5 https:<span class="hljs-regexp">//</span>osu.ppy.sh<span class="hljs-regexp">/b/</span><span class="hljs-number">75</span> *
+</code></pre><p>Returns the #5 score on this beatmap.</p>
+<h2 id="-strains">!strains</h2>
+<p>Show a visual strain graph of the star raiting over time on a beatmap.</p>
+<p><strong>Usage</strong>: <code>!strains [beatmap url] [+mods] [AR8] [CS6] [aim/speed]</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code><span class="hljs-addition">!strains</span>
+</code></pre><p>Returns strain graph for the last beatmap.</p>
+<pre><code>!<span class="hljs-keyword">strains </span>+HR CS5
+</code></pre><p>Returns strain graph with HR applied and CS set to 5 for the last beatmap.</p>
+<pre><code>!<span class="hljs-keyword">strains </span>https://osu.ppy.sh/<span class="hljs-keyword">b/75 </span>aim
+</code></pre><p>Returns aim strain graph for this beatmap.</p>
+<h2 id="-time">!time</h2>
+<p>Get the current time at a place.</p>
+<p><strong>Usage</strong>: <code>!time [name of place, e.g. city]</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code>!<span class="hljs-selector-tag">time</span> london
+</code></pre><p>Returns the current time in London.</p>
+<h2 id="-top">!top</h2>
+<p>Show a specific top play.</p>
+<p><strong>Variations</strong>: <code>!top</code>, <code>!rb</code>, <code>!recentbest</code>, <code>!ob</code>, <code>!oldbest</code></p>
+<p><strong>Usage</strong>: <code>!top [username]</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code>!<span class="hljs-built_in">top</span>
+</code></pre><p>Returns your #1 top play.</p>
+<pre><code><span class="hljs-addition">!top5 vaxei</span>
+</code></pre><p>Returns Vaxei&#39;s #5 top play.</p>
+<pre><code><span class="hljs-addition">!rb</span>
+</code></pre><p>Returns your most recent top play.</p>
+<pre><code><span class="hljs-addition">!ob</span>
+</code></pre><p>Returns your oldest top play (from your top 100).</p>
+<h2 id="-uptime">!uptime</h2>
+<p>See how for long a Twitch channel has been live or for how long it hasn&#39;t been streaming.</p>
+<p><strong>Variations</strong>: <code>!uptime</code>, <code>!downtime</code></p>
+<p><strong>Usage</strong>: <code>!uptime &lt;twitch username&gt;</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code><span class="hljs-addition">!uptime distortion2</span>
+</code></pre><p>Returns distortion2&#39;s uptime or downtime.</p>
+<pre><code><span class="hljs-addition">!downtime ninja</span>
+</code></pre><p>Returns ninja&#39;s uptime or downtime.</p>
+<h2 id="-viewers">!viewers</h2>
+<p>See how many people are watching a Twitch channel.</p>
+<p><strong>Usage</strong>: <code>!viewers &lt;twitch username&gt;</code></p>
+<h3 id="example-">Example:</h3>
+<pre><code><span class="hljs-addition">!viewers distortion2</span>
+</code></pre><p>Returns how many viewers distortion2 currently has (if they&#39;re live).</p>
+<h2 id="-with">!with</h2>
+<p>Show pp values of a beatmap with several accuracies or a specified accuracy.</p>
+<p><strong>Usage</strong>: <code>!with [+mods] [98.34%]</code></p>
+<h3 id="examples-">Examples:</h3>
+<pre><code>!<span class="hljs-keyword">with</span>
+</code></pre><p>Returns pp values for the last beatmap with the same mods.</p>
+<pre><code>!<span class="hljs-keyword">with</span> +
+</code></pre><p>Returns pp values for the last beatmap without mods.</p>
+<pre><code>!with +HD <span class="hljs-number">97.5</span><span class="hljs-comment">%</span>
+</code></pre><p>Returns pp value for the last beatmap with 97.5% accuracy and HD applied.</p>
+
 									
 									
 								</div>
